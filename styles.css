@@ -61,3 +61,46 @@ header {
     background-color: #003366;
     transition: background-color 0.3s;
 }
+
+/* Knapp för navigation (Tillbaka till idag och Skicka in ditt event) */
+.navigation-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #00509e;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.navigation-button:hover {
+    background-color: #003366;
+    transition: background-color 0.3s;
+}
+
+/* Eventlistan under kalendern */
+#event-list {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.event-item:last-child {
+    border-bottom: none;
+}
+
+.event-item:hover {
+    background-color: #f0f0f0;
+    transition: background-color 0.3s;
+}
