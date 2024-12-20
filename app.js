@@ -80,24 +80,22 @@ function updateEventList(month = null, year = null) {
         return eventDate.getMonth() === month && eventDate.getFullYear() === year;
     });
 
-    // Sortera event i datumordning
-    const sortedEvents = filteredEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
-
     // Ändra rubrik baserat på visning
     if (month === null && year === null) {
         eventListTitle.textContent = 'Alla kommande events';
     } else {
-        eventListTitle.textContent = `Events i ${new Date(year, month).toLocaleString('default', { month: 'long', year: 'numeric' })}`;
+        const monthName = new Date(year, month).toLocaleString('default', { month: 'long' });
+        eventListTitle.textContent = `Events i ${monthName} ${year}`;
     }
 
     // Om inga event hittas
-    if (sortedEvents.length === 0) {
+    if (filteredEvents.length === 0) {
         eventListContainer.innerHTML = '<p>Inga event hittades.</p>';
         return;
     }
 
     // Skapa en lista över event
-    sortedEvents.forEach(event => {
+    filteredEvents.forEach(event => {
         const eventDiv = document.createElement('div');
         eventDiv.classList.add('event-item');
         eventDiv.innerHTML = `
