@@ -56,6 +56,7 @@ function generateCalendar(month, year) {
         calendarGrid.appendChild(dayCell);
     }
 
+    // Uppdatera eventlistan för vald månad
     updateEventList(month, year);
 }
 
@@ -100,8 +101,6 @@ function updateEventList(month = null, year = null) {
     });
 }
 
-
-
 // Navigeringsknappar
 prevMonthButton.addEventListener('click', () => {
     if (currentMonth === 0) {
@@ -123,12 +122,14 @@ nextMonthButton.addEventListener('click', () => {
     generateCalendar(currentMonth, currentYear);
 });
 
-// Knapp för att gå tillbaka till idag
+// Knapp för att gå tillbaka till idag och visa alla kommande event
 backToTodayButton.addEventListener('click', () => {
     currentMonth = new Date().getMonth();
     currentYear = new Date().getFullYear();
     generateCalendar(currentMonth, currentYear);
+    updateEventList(); // Visa alla kommande event
 });
 
-// Generera kalendern för aktuell månad
+// Generera kalendern och visa alla kommande event som standard
 generateCalendar(currentMonth, currentYear);
+updateEventList();
