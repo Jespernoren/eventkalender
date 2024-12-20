@@ -59,25 +59,36 @@ function generateCalendar(month, year) {
     updateEventList(month, year);
 }
 
-// Funktion för att uppdatera listan över aktiva event
-function updateEventList() {
+// Funktion för att uppdatera listan över event
+function updateEventList(month = null, year = null) {
     eventListContainer.innerHTML = '';
 
     const today = new Date();
 
-    // Filtrera och sortera event som är idag eller senare
-    const upcomingEvents = events
-        .filter(event => new Date(event.date) >= today)
-        .sort((a, b) => new Date(a.date) - new Date(b.date));
+    // Filtrera event baserat på dagens datum eller valt månad/år
+    const filteredEvents = events.filter(event => {
+        const eventDate = new Date(event.date);
 
-    // Om det inte finns några kommande event
-    if (upcomingEvents.length === 0) {
-        eventListContainer.innerHTML = '<p>Inga kommande event.</p>';
+        // Visa alla kommande event som standard
+        if (month === null && year === null) {
+            return eventDate >= today;
+        }
+
+        // Visa event för den valda månaden och året
+        return eventDate.getMonth() === month && eventDate.getFullYear() === year;
+    });
+
+    // Sortera event i datumordning
+    const sortedEvents = filteredEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    // Om inga event hittas
+    if (sortedEvents.length === 0) {
+        eventListContainer.innerHTML = '<p>Inga event hittades.</p>';
         return;
     }
 
-    // Skapa en lista av kommande event
-    upcomingEvents.forEach(event => {
+    // Skapa en lista över event
+    sortedEvents.forEach(event => {
         const eventDiv = document.createElement('div');
         eventDiv.classList.add('event-item');
         eventDiv.innerHTML = `
@@ -88,6 +99,7 @@ function updateEventList() {
         eventListContainer.appendChild(eventDiv);
     });
 }
+
 
 
 // Navigeringsknappar
