@@ -23,24 +23,23 @@ header {
 
 #calendar-navigation {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Justerar länkar och titel på samma rad */
+    align-items: center; /* Centrerar vertikalt */
     gap: 10px; /* Mellanrum mellan länkar och titel */
     margin: 10px 0;
     padding: 10px 0;
-    flex-wrap: nowrap; /* Förhindrar radbrytning */
 }
 
 #current-month {
-    text-align: center;
-    font-size: 1.2rem;
-    margin: 0;
+    font-size: 1.5rem;
     color: #343a40;
     text-transform: capitalize;
+    text-align: center;
+    flex-grow: 1; /* Fyller utrymme mellan länkar */
 }
 
 .navigation-link {
-    text-decoration: none;
+    text-decoration: underline; /* Ser alltid ut som länkar */
     color: #00509e; /* Blå färg */
     font-size: 1rem;
     font-weight: bold;
@@ -49,7 +48,6 @@ header {
 }
 
 .navigation-link:hover {
-    text-decoration: underline;
     color: #003366; /* Mörkare blå vid hovring */
 }
 
@@ -123,8 +121,8 @@ header {
 /* Anpassning för små skärmar */
 @media (max-width: 600px) {
     #calendar-navigation {
-        flex-direction: row; /* Håller allt på samma rad */
-        justify-content: space-between;
+        justify-content: space-between; /* Behåller allt på samma rad */
+        flex-wrap: nowrap; /* Förhindrar radbrytning */
         gap: 5px;
     }
 
