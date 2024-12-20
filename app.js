@@ -55,9 +55,6 @@ function generateCalendar(month, year) {
 
         calendarGrid.appendChild(dayCell);
     }
-
-    // Uppdatera eventlistan för vald månad
-    updateEventList(month, year);
 }
 
 // Funktion för att uppdatera listan över event
@@ -110,6 +107,7 @@ prevMonthButton.addEventListener('click', () => {
         currentMonth--;
     }
     generateCalendar(currentMonth, currentYear);
+    updateEventList(currentMonth, currentYear); // Visa event för vald månad
 });
 
 nextMonthButton.addEventListener('click', () => {
@@ -120,6 +118,7 @@ nextMonthButton.addEventListener('click', () => {
         currentMonth++;
     }
     generateCalendar(currentMonth, currentYear);
+    updateEventList(currentMonth, currentYear); // Visa event för vald månad
 });
 
 // Knapp för att gå tillbaka till idag och visa alla kommande event
