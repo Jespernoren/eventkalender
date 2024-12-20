@@ -1,75 +1,26 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f9fa;
-    color: #343a40;
+/* Lägg till hover-effekt för kalenderdagar med evenemang */
+.calendar-day.event:hover {
+    background-color: #00509e;
+    transition: background-color 0.3s;
 }
 
-header {
-    background-color: #003366;
-    color: white;
-    text-align: center;
-    padding: 1em;
-}
-
-#calendar {
-    max-width: 800px;
-    margin: 2em auto;
-    padding: 1em;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.event {
-    border-bottom: 1px solid #ddd;
-    padding: 1em 0;
-}
-
-.event:last-child {
-    border-bottom: none;
-}
-
-.event-date {
-    font-weight: bold;
-    color: #003366;
-}
-
-.event-title {
-    font-size: 1.2em;
-    margin: 0.5em 0;
-}
-
-.event-description {
-    margin: 0.5em 0;
-}
-
-#calendar-navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px auto;
-    max-width: 800px;
-}
-
-#calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
-    max-width: 800px;
-    margin: 20px auto;
-}
-
+/* Justera texten i kalendern */
 .calendar-day {
-    padding: 10px;
-    text-align: center;
-    background-color: #f0f0f0;
-    border-radius: 5px;
+    font-size: 1rem;
 }
 
-.calendar-day.event {
-    background-color: #003366;
+/* Förbättra knapparna i navigeringen */
+#calendar-navigation button {
+    background-color: #00509e;
     color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
     cursor: pointer;
+}
+
+#calendar-navigation button:hover {
+    background-color: #003366;
+    transition: background-color 0.3s;
 }
