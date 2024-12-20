@@ -14,15 +14,14 @@
     <!-- Allt innehåll ligger inom en container -->
     <main class="container">
 
-<!-- Navigering -->
-<div id="calendar-navigation">
-    <a id="prev-month" class="navigation-link">← Föregående</a>
-    <h2 id="current-month"></h2>
-    <a id="next-month" class="navigation-link">Nästa →</a>
-</div>
+        <!-- Navigering för månad och titlar -->
+        <div id="calendar-navigation">
+            <a id="prev-month" class="navigation-link">← Föregående</a>
+            <h2 id="current-month"></h2>
+            <a id="next-month" class="navigation-link">Nästa →</a>
+        </div>
 
-
-        <!-- Kalender -->
+        <!-- Kalendergrid -->
         <div id="calendar-grid"></div>
 
         <!-- Navigationsknappar under kalendern -->
@@ -33,7 +32,7 @@
 
         <!-- Lista över kommande event -->
         <section id="event-list">
-            <h3>Kommande event</h3>
+            <h3 id="event-list-title">Kommande event</h3>
             <div id="events-container"></div>
         </section>
     </main>
