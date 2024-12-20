@@ -16,6 +16,7 @@ const prevMonthButton = document.getElementById('prev-month');
 const nextMonthButton = document.getElementById('next-month');
 const backToTodayButton = document.getElementById('back-to-today');
 const eventListContainer = document.getElementById('events-container');
+const eventListTitle = document.getElementById('event-list-title');
 
 // Funktion för att generera kalendern
 function generateCalendar(month, year) {
@@ -81,6 +82,13 @@ function updateEventList(month = null, year = null) {
 
     // Sortera event i datumordning
     const sortedEvents = filteredEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    // Ändra rubrik baserat på visning
+    if (month === null && year === null) {
+        eventListTitle.textContent = 'Alla kommande events';
+    } else {
+        eventListTitle.textContent = `Events i ${new Date(year, month).toLocaleString('default', { month: 'long', year: 'numeric' })}`;
+    }
 
     // Om inga event hittas
     if (sortedEvents.length === 0) {
