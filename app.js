@@ -14,6 +14,8 @@ const calendarGrid = document.getElementById('calendar-grid');
 const currentMonthElement = document.getElementById('current-month');
 const prevMonthButton = document.getElementById('prev-month');
 const nextMonthButton = document.getElementById('next-month');
+const backToTodayButton = document.getElementById('back-to-today');
+const eventListContainer = document.getElementById('events-container');
 
 // Funktion för att generera kalendern
 function generateCalendar(month, year) {
@@ -47,13 +49,38 @@ function generateCalendar(month, year) {
         if (event) {
             dayCell.classList.add('event');
             dayCell.addEventListener('click', () => {
-                // Visa mer information om eventet i en popup
                 alert(`Evenemang: ${event.title}\nDatum: ${event.date}\nPlats: ${event.location}\nBeskrivning: ${event.description}`);
             });
         }
 
         calendarGrid.appendChild(dayCell);
     }
+
+    updateEventList(month, year);
+}
+
+// Funktion för att uppdatera listan över aktiva event
+function updateEventList(month, year) {
+    eventListContainer.innerHTML = '';
+
+    const activeEvents = events
+        .filter(event => {
+            const eventDate = new Date(event.date);
+            return eventDate.getMonth() === month && eventDate.getFullYear() === year;
+        })
+        .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+    if (activeEvents.length === 0) {
+        eventListContainer.innerHTML = '<p>Inga aktiva event för denna månad.</p>';
+        return;
+    }
+
+    activeEvents.forEach(event => {
+        const eventDiv = document.createElement('div');
+        eventDiv.classList.add('event-item');
+        eventDiv.textContent = `${event.date}: ${event.title}`;
+        eventListContainer.appendChild(eventDiv);
+    });
 }
 
 // Navigeringsknappar
@@ -74,6 +101,13 @@ nextMonthButton.addEventListener('click', () => {
     } else {
         currentMonth++;
     }
+    generateCalendar(currentMonth, currentYear);
+});
+
+// Knapp för att gå tillbaka till idag
+backToTodayButton.addEventListener('click', () => {
+    currentMonth = new Date().getMonth();
+    currentYear = new Date().getFullYear();
     generateCalendar(currentMonth, currentYear);
 });
 
