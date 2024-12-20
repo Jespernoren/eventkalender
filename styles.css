@@ -29,6 +29,7 @@ header {
     align-items: center;
     margin: 20px auto;
     padding: 10px;
+    max-width: 800px;
 }
 
 /* Kalendern */
@@ -38,7 +39,7 @@ header {
     gap: 10px;
     max-width: 800px;
     margin: 20px auto;
-    padding: 0 10px;
+    padding: 0 20px; /* Extra padding för att förhindra att kalendern når kanterna */
 }
 
 /* Dagar i kalendern */
@@ -124,11 +125,13 @@ header {
     #calendar-navigation {
         flex-direction: column;
         gap: 10px;
+        padding: 10px; /* Extra padding för mobil */
     }
 
     #calendar-grid {
         grid-template-columns: repeat(7, 1fr);
         gap: 5px;
+        padding: 0 10px; /* Minska horisontell padding för små skärmar */
     }
 
     .calendar-day {
