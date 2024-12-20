@@ -13,27 +13,29 @@
 
     <!-- Allt innehåll ligger inom en container -->
     <main class="container">
+        <!-- Månadens titel -->
+        <h2 id="current-month"></h2>
+
         <!-- Navigering -->
         <div id="calendar-navigation">
             <button id="prev-month">Föregående</button>
-            <h2 id="current-month"></h2>
             <button id="next-month">Nästa</button>
         </div>
 
         <!-- Kalender -->
         <div id="calendar-grid"></div>
 
-        <!-- Knapp för att gå tillbaka till idag -->
-        <button id="back-to-today" class="navigation-button">Tillbaka till idag</button>
+        <!-- Navigationsknappar under kalendern -->
+        <div id="below-calendar-navigation">
+            <button id="back-to-today" class="navigation-button">Tillbaka till idag</button>
+            <button id="submit-event" class="navigation-button">Tipsa om event</button>
+        </div>
 
         <!-- Lista över kommande event -->
         <section id="event-list">
             <h3>Kommande event</h3>
             <div id="events-container"></div>
         </section>
-
-        <!-- Skicka in event -->
-        <button id="submit-event" class="navigation-button">Skicka in ditt event</button>
     </main>
 
     <script src="app.js"></script>
