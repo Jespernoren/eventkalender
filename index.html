@@ -11,13 +11,25 @@
         <h1>Eventkalender</h1>
     </header>
 
-    <!-- Navigering och kalender -->
+    <!-- Navigering -->
     <div id="calendar-navigation">
         <button id="prev-month">Föregående</button>
         <h2 id="current-month"></h2>
         <button id="next-month">Nästa</button>
     </div>
     <div id="calendar-grid"></div>
+
+    <!-- Knapp för att gå tillbaka till idag -->
+    <button id="back-to-today" class="navigation-button">Tillbaka till idag</button>
+
+    <!-- Lista över aktiva event -->
+    <section id="event-list">
+        <h3>Aktiva event</h3>
+        <div id="events-container"></div>
+    </section>
+
+    <!-- Skicka in event -->
+    <button id="submit-event" class="navigation-button">Skicka in ditt event</button>
 
     <script src="app.js"></script>
 </body>
