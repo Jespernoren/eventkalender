@@ -60,28 +60,35 @@ function generateCalendar(month, year) {
 }
 
 // Funktion för att uppdatera listan över aktiva event
-function updateEventList(month, year) {
+function updateEventList() {
     eventListContainer.innerHTML = '';
 
-    const activeEvents = events
-        .filter(event => {
-            const eventDate = new Date(event.date);
-            return eventDate.getMonth() === month && eventDate.getFullYear() === year;
-        })
+    const today = new Date();
+
+    // Filtrera och sortera event som är idag eller senare
+    const upcomingEvents = events
+        .filter(event => new Date(event.date) >= today)
         .sort((a, b) => new Date(a.date) - new Date(b.date));
 
-    if (activeEvents.length === 0) {
-        eventListContainer.innerHTML = '<p>Inga aktiva event för denna månad.</p>';
+    // Om det inte finns några kommande event
+    if (upcomingEvents.length === 0) {
+        eventListContainer.innerHTML = '<p>Inga kommande event.</p>';
         return;
     }
 
-    activeEvents.forEach(event => {
+    // Skapa en lista av kommande event
+    upcomingEvents.forEach(event => {
         const eventDiv = document.createElement('div');
         eventDiv.classList.add('event-item');
-        eventDiv.textContent = `${event.date}: ${event.title}`;
+        eventDiv.innerHTML = `
+            <strong>${event.date}:</strong> ${event.title}<br>
+            <em>${event.location}</em><br>
+            <p>${event.description}</p>
+        `;
         eventListContainer.appendChild(eventDiv);
     });
 }
+
 
 // Navigeringsknappar
 prevMonthButton.addEventListener('click', () => {
