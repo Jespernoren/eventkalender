@@ -1,1 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+header {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+#calendar {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1em;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.event {
+    border-bottom: 1px solid #ddd;
+    padding: 1em 0;
+}
+
+.event:last-child {
+    border-bottom: none;
+}
+
+.event-date {
+    font-weight: bold;
+    color: #003366;
+}
+
+.event-title {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+}
+
+.event-description {
+    margin: 0.5em 0;
+}
 
