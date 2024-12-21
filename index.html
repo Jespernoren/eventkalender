@@ -11,33 +11,37 @@
         <h1>Eventkalender</h1>
     </header>
 
-    <!-- Allt innehåll i två kolumner -->
+    <!-- Huvudinnehåll med två kolumner -->
     <main class="container">
 
-        <!-- Vänsterkolumn (eventlistan) -->
-        <section class="left-column">
-            <h3 id="event-list-title">Kommande event</h3>
-            <div id="events-container"></div>
-        </section>
+        <!-- Layout för två kolumner -->
+        <div class="main-content">
+            <!-- Lista över kommande event -->
+            <section id="event-list">
+                <h3 id="event-list-title">Kommande event</h3>
+                <div id="events-container"></div>
+            </section>
 
-        <!-- Högerkolumn (kalendern) -->
-        <aside class="right-column">
-            <!-- Navigering för månad -->
-            <div id="calendar-navigation">
-                <a id="prev-month" class="navigation-link">← Föregående</a>
-                <h2 id="current-month"></h2>
-                <a id="next-month" class="navigation-link">Nästa →</a>
-            </div>
+            <!-- Kalender -->
+            <aside id="calendar-column">
+                <!-- Navigering för månad och titlar -->
+                <div id="calendar-navigation">
+                    <a id="prev-month" class="navigation-link">← Föregående</a>
+                    <h2 id="current-month"></h2>
+                    <a id="next-month" class="navigation-link">Nästa →</a>
+                </div>
 
-            <!-- Kalendergrid -->
-            <div id="calendar-grid"></div>
+                <!-- Kalendergrid -->
+                <div id="calendar-grid"></div>
 
-            <!-- Navigationsknappar under kalendern -->
-            <div id="below-calendar-navigation">
-                <button id="back-to-today" class="navigation-button">Alla kommande events</button>
-                <button id="submit-event" class="navigation-button">Tipsa om event</button>
-            </div>
-        </aside>
+                <!-- Navigationsknappar under kalendern -->
+                <div id="below-calendar-navigation">
+                    <button id="back-to-today" class="navigation-button">Alla kommande events</button>
+                    <button id="submit-event" class="navigation-button">Tipsa om event</button>
+                </div>
+            </aside>
+        </div>
+
     </main>
 
     <script src="app.js"></script>
