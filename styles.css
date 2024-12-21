@@ -102,23 +102,22 @@ header {
 }
 
 .event-info-button {
-    display: inline; /* Gör att den beter sig som en textlänk */
-    margin: 0; /* Ingen extra marginal */
-    padding: 0; /* Ingen knappstil */
-    font-size: 1rem;
-    color: #00509e; /* Länkfärg */
-    background: none; /* Ingen bakgrund */
-    border: none; /* Ingen kant */
-    text-decoration: underline; /* Understrykning som länkar */
-    cursor: pointer; /* Handpekare vid hovring */
-    text-align: left; /* Justering som text */
+    display: inline !important; /* Gör att den beter sig som en textlänk */
+    margin: 0 !important; /* Ingen extra marginal */
+    padding: 0 !important; /* Ingen knappstil */
+    font-size: 1rem !important;
+    color: #00509e !important; /* Länkfärg */
+    background: none !important; /* Ingen bakgrund */
+    border: none !important; /* Ingen kant */
+    text-decoration: underline !important; /* Understrykning som länkar */
+    cursor: pointer !important; /* Handpekare vid hovring */
+    text-align: left !important; /* Justering som text */
 }
 
 .event-info-button:hover {
-    color: #003366; /* Mörkare blå vid hovring */
-    text-decoration: none; /* Ingen understrykning vid hovring */
+    color: #003366 !important; /* Mörkare blå vid hovring */
+    text-decoration: none !important; /* Ingen understrykning vid hovring */
 }
-
 
 .navigation-button {
     display: inline-block;
