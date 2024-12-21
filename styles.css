@@ -53,7 +53,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 #current-month {
@@ -64,9 +64,9 @@ header {
 }
 
 .navigation-link {
-    text-decoration: underline;
+    text-decoration: none;
+    font-size: 1.5rem; /* Förstorade pilarna */
     color: #00509e;
-    font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
 }
@@ -80,6 +80,24 @@ header {
     grid-template-columns: repeat(7, 1fr);
     gap: 8px;
     margin-top: 10px;
+}
+
+#all-events-button {
+    display: block;
+    margin: 20px auto; /* Centrerar knappen under kalendern */
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #00509e;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#all-events-button:hover {
+    background-color: #003366;
 }
 
 .calendar-day {
@@ -262,6 +280,11 @@ header {
     }
 
     .back-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    #all-events-button {
         font-size: 0.9rem;
         padding: 8px 16px;
     }
