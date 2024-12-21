@@ -20,8 +20,7 @@ const eventListTitle = document.getElementById('event-list-title');
 
 // Funktion för att generera kalendern
 function generateCalendar(month, year) {
-    // Rensa kalendern
-    calendarGrid.innerHTML = '';
+    calendarGrid.innerHTML = ''; // Rensa kalendern
 
     // Visa aktuell månad och år
     currentMonthElement.textContent = new Date(year, month).toLocaleString('default', { month: 'long', year: 'numeric' });
@@ -50,15 +49,15 @@ function generateCalendar(month, year) {
         if (event) {
             dayCell.classList.add('event');
             dayCell.addEventListener('click', () => {
-                alert(`Evenemang: ${event.title}\nDatum: ${event.date}\nPlats: ${event.location}\nBeskrivning: ${event.description}`);
+                const queryString = `?date=${event.date}&title=${encodeURIComponent(event.title)}&location=${encodeURIComponent(event.location)}&description=${encodeURIComponent(event.description)}`;
+                window.location.href = `event.html${queryString}`;
             });
         }
 
         calendarGrid.appendChild(dayCell);
     }
 
-    // Uppdatera eventlistan för specifik månad
-    updateEventList(month, year);
+    updateEventList(month, year); // Uppdatera eventlistan
 }
 
 // Funktion för att uppdatera listan över event
@@ -67,7 +66,7 @@ function updateEventList(month = null, year = null) {
 
     const today = new Date();
 
-    // Filtrera event baserat på dagens datum eller valt månad/år
+    // Filtrera event baserat på datum
     const filteredEvents = events.filter(event => {
         const eventDate = new Date(event.date);
 
@@ -80,7 +79,7 @@ function updateEventList(month = null, year = null) {
         return eventDate.getMonth() === month && eventDate.getFullYear() === year;
     });
 
-    // Ändra rubrik baserat på visning
+    // Uppdatera rubriken baserat på visning
     if (month === null && year === null) {
         eventListTitle.textContent = 'Alla kommande events';
     } else {
@@ -136,6 +135,6 @@ backToTodayButton.addEventListener('click', () => {
     updateEventList(); // Visa alla kommande event
 });
 
-// Generera kalendern och visa alla kommande event som standard
+// Initiera kalendern
 generateCalendar(currentMonth, currentYear);
 updateEventList();
