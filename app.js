@@ -48,10 +48,20 @@ function generateCalendar(month, year) {
 
         if (event) {
             dayCell.classList.add('event');
-            dayCell.addEventListener('click', () => {
+
+            // Lägg till en knapp för att visa mer information om eventet
+            const infoButton = document.createElement('button');
+            infoButton.textContent = "Visa all info";
+            infoButton.classList.add('event-info-button');
+
+            // Navigera till eventsidan när knappen klickas
+            infoButton.addEventListener('click', (e) => {
+                e.stopPropagation(); // Hindra klick på dagen att trigga något
                 const queryString = `?date=${event.date}&title=${encodeURIComponent(event.title)}&location=${encodeURIComponent(event.location)}&description=${encodeURIComponent(event.description)}`;
                 window.location.href = `event.html${queryString}`;
             });
+
+            dayCell.appendChild(infoButton); // Lägg till knappen i dagens cell
         }
 
         calendarGrid.appendChild(dayCell);
