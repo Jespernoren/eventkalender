@@ -163,19 +163,26 @@ header {
     font-size: 2rem;
     color: #003366;
     margin-bottom: 10px;
-    text-align: left; /* Ändrat till vänsterjusterat */
+    text-align: left;
 }
 
 .event-details {
     font-size: 1.2rem;
     margin-bottom: 20px;
-    text-align: left; /* Ändrat till vänsterjusterat */
+    text-align: left;
 }
 
 .event-details span {
     display: block;
-    color: #00509e;
+    color: #00509e; /* Blå rubriker */
     font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.event-details p {
+    color: #343a40; /* Svart text */
+    font-weight: normal;
+    margin: 0;
 }
 
 .event-description {
@@ -185,7 +192,7 @@ header {
     padding: 10px;
     background-color: #f9f9f9;
     border-radius: 8px;
-    text-align: left; /* Ändrat till vänsterjusterat */
+    text-align: left;
 }
 
 .back-button {
