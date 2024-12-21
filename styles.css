@@ -173,13 +173,14 @@ header {
 }
 
 .event-details span {
-    display: block;
+    display: inline-block; /* Lägger rubriken och texten på samma rad */
+    margin-right: 5px;
     color: #00509e; /* Blå rubriker */
     font-weight: bold;
-    margin-bottom: 5px;
 }
 
 .event-details p {
+    display: inline-block; /* Lägger texten bredvid rubriken */
     color: #343a40; /* Svart text */
     font-weight: normal;
     margin: 0;
