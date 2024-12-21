@@ -30,30 +30,14 @@
             <button id="submit-event" class="navigation-button">Tipsa om event</button>
         </div>
 
-    <!-- Lista över kommande event -->
-<section id="event-list">
-    <h3 id="event-list-title">Kommande event</h3>
-    <div id="events-container"></div>
-</section>
+        <!-- Lista över kommande event -->
+        <section id="event-list">
+            <h3 id="event-list-title">Kommande event</h3>
+            <div id="events-container"></div>
+        </section>
 
     </main>
 
-    <script>
-        // Dynamisk uppdatering av titeln för eventlistan
-        const eventListTitle = document.getElementById('event-list-title');
-        const currentMonthName = new Date().toLocaleString('default', { month: 'long' });
-
-        // Funktion för att ändra titeln baserat på visningsläge
-        function updateEventListTitle(isAllEvents) {
-            if (isAllEvents) {
-                eventListTitle.textContent = "Alla kommande events";
-            } else {
-                eventListTitle.textContent = `Kommande events i ${currentMonthName}`;
-            }
-        }
-
-        // Uppdatera titeln som standard till alla kommande events
-        updateEventListTitle(true); // Ändra till `false` om du vill visa månadens titel som standard
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
