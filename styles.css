@@ -93,11 +93,29 @@ header {
 .calendar-day.event {
     background-color: #003366;
     color: white;
-    cursor: pointer;
+    cursor: default; /* Hindrar klick */
 }
 
 .calendar-day.event:hover {
     background-color: #00509e;
+    transition: background-color 0.3s;
+}
+
+.event-info-button {
+    display: block;
+    margin-top: 5px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    color: white;
+    background-color: #00509e;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.event-info-button:hover {
+    background-color: #003366;
     transition: background-color 0.3s;
 }
 
@@ -128,40 +146,6 @@ header {
 
 .event-item:hover {
     background-color: #f0f0f0;
-}
-
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .right-column {
-        order: -1;
-    }
-
-    #calendar-navigation {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .navigation-link {
-        font-size: 0.9rem;
-    }
-
-    #calendar-grid {
-        grid-template-columns: repeat(7, 1fr);
-        gap: 5px;
-    }
-
-    .calendar-day {
-        padding: 8px;
-        font-size: 0.9rem;
-    }
-
-    .navigation-button {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-    }
 }
 
 /* Eventsida-stilar */
@@ -223,6 +207,43 @@ header {
 
 /* Anpassning för små skärmar */
 @media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .right-column {
+        order: -1;
+    }
+
+    #calendar-navigation {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navigation-link {
+        font-size: 0.9rem;
+    }
+
+    #calendar-grid {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+    }
+
+    .calendar-day {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .event-info-button {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+
+    .navigation-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
     .event-title {
         font-size: 1.5rem;
     }
@@ -240,4 +261,3 @@ header {
         padding: 8px 16px;
     }
 }
-
