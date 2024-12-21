@@ -16,46 +16,36 @@ header {
 
 .container {
     display: flex;
-    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: flex-start;
     max-width: 1200px;
     margin: 20px auto;
     padding: 15px;
     gap: 20px;
-    box-sizing: border-box;
+}
+
+.left-column, .right-column {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .left-column {
     flex: 2;
-    background-color: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .right-column {
     flex: 1;
-    background-color: white;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 100%; /* Säkerställer bredd i mobil */
-}
-
-#above-event-buttons {
-    display: flex;
-    justify-content: flex-start;
-    gap: 10px;
-    margin-bottom: 15px;
+    max-width: 100%;
 }
 
 #calendar-navigation {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
     margin-bottom: 10px;
-    gap: 5px;
 }
 
 #current-month {
@@ -70,7 +60,6 @@ header {
     color: #00509e;
     font-weight: bold;
     cursor: pointer;
-    margin: 0 5px;
 }
 
 .navigation-link:hover {
@@ -81,10 +70,8 @@ header {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 8px;
-    margin-top: 10px;
-    max-width: 100%; /* Säkerställer att kalendern inte går utanför */
-    padding: 0 15px; /* Matchar paddingen på sidan */
-    margin: 0 auto; /* Centrerar kalendern */
+    margin: 10px auto;
+    padding: 0 15px;
 }
 
 #all-events-button {
@@ -97,7 +84,6 @@ header {
     border: none;
     border-radius: 5px;
     text-align: center;
-    text-decoration: none;
     cursor: pointer;
 }
 
@@ -116,7 +102,6 @@ header {
 .calendar-day.event {
     background-color: #003366;
     color: white;
-    cursor: default;
 }
 
 .calendar-day.event:hover {
@@ -125,37 +110,16 @@ header {
 }
 
 .event-info-button {
-    display: inline !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    font-size: 1rem !important;
-    color: #00509e !important;
-    background: none !important;
-    border: none !important;
-    text-decoration: underline !important;
-    cursor: pointer !important;
-    text-align: left !important;
+    font-size: 1rem;
+    color: #00509e;
+    text-decoration: underline;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .event-info-button:hover {
-    color: #003366 !important;
-    text-decoration: none !important;
-}
-
-.navigation-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: white;
-    background-color: #00509e;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-}
-
-.navigation-button:hover {
-    background-color: #003366;
+    color: #003366;
 }
 
 .event-item {
@@ -171,7 +135,6 @@ header {
     background-color: #f0f0f0;
 }
 
-/* Eventsida-stilar */
 .event-container {
     max-width: 800px;
     margin: 20px auto;
@@ -179,7 +142,6 @@ header {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
 }
 
 .event-title {
@@ -198,12 +160,10 @@ header {
 .event-details span.label {
     color: #00509e;
     font-weight: bold;
-    margin-right: 5px;
 }
 
 .event-details span.value {
     color: #343a40;
-    font-weight: normal;
 }
 
 .event-description {
@@ -217,8 +177,8 @@ header {
 }
 
 .back-button {
-    display: inline-block;
-    margin-top: 15px;
+    display: block;
+    margin: 15px auto;
     padding: 10px 20px;
     font-size: 1rem;
     color: white;
@@ -226,7 +186,6 @@ header {
     border: none;
     border-radius: 5px;
     text-align: center;
-    text-decoration: none;
     cursor: pointer;
 }
 
@@ -234,7 +193,7 @@ header {
     background-color: #003366;
 }
 
-/* Anpassning för små skärmar */
+/* Mobilanpassning */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -250,29 +209,19 @@ header {
         justify-content: center;
     }
 
-    .navigation-link {
-        font-size: 1rem;
-    }
-
     #calendar-grid {
         grid-template-columns: repeat(7, 1fr);
         gap: 5px;
-        max-width: 100%;
-        padding: 0 15px;
+    }
+
+    #all-events-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
     }
 
     .calendar-day {
         padding: 8px;
         font-size: 0.9rem;
-    }
-
-    .event-info-button {
-        font-size: 0.8rem;
-    }
-
-    .navigation-button {
-        font-size: 0.9rem;
-        padding: 8px 16px;
     }
 
     .event-title {
@@ -288,11 +237,6 @@ header {
     }
 
     .back-button {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-    }
-
-    #all-events-button {
         font-size: 0.9rem;
         padding: 8px 16px;
     }
