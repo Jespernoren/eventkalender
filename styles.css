@@ -45,8 +45,8 @@ header {
 #above-event-buttons {
     display: flex;
     justify-content: flex-start; /* Justerar knapparna till vänster */
-    gap: 10px; /* Mellanrum mellan knapparna */
-    margin-bottom: 15px; /* Avstånd under knapparna */
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
 #calendar-navigation {
@@ -103,20 +103,20 @@ header {
 
 .event-info-button {
     display: inline !important; /* Gör att den beter sig som en textlänk */
-    margin: 0 !important; /* Ingen extra marginal */
-    padding: 0 !important; /* Ingen knappstil */
+    margin: 0 !important;
+    padding: 0 !important;
     font-size: 1rem !important;
     color: #00509e !important; /* Länkfärg */
-    background: none !important; /* Ingen bakgrund */
-    border: none !important; /* Ingen kant */
-    text-decoration: underline !important; /* Understrykning som länkar */
-    cursor: pointer !important; /* Handpekare vid hovring */
-    text-align: left !important; /* Justering som text */
+    background: none !important;
+    border: none !important;
+    text-decoration: underline !important;
+    cursor: pointer !important;
+    text-align: left !important;
 }
 
 .event-info-button:hover {
-    color: #003366 !important; /* Mörkare blå vid hovring */
-    text-decoration: none !important; /* Ingen understrykning vid hovring */
+    color: #003366 !important;
+    text-decoration: none !important;
 }
 
 .navigation-button {
@@ -163,13 +163,13 @@ header {
     font-size: 2rem;
     color: #003366;
     margin-bottom: 10px;
-    text-align: center;
+    text-align: left; /* Ändrat till vänsterjusterat */
 }
 
 .event-details {
     font-size: 1.2rem;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left; /* Ändrat till vänsterjusterat */
 }
 
 .event-details span {
@@ -185,6 +185,7 @@ header {
     padding: 10px;
     background-color: #f9f9f9;
     border-radius: 8px;
+    text-align: left; /* Ändrat till vänsterjusterat */
 }
 
 .back-button {
