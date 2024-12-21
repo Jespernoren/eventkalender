@@ -51,16 +51,16 @@ header {
 
 #calendar-navigation {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin-bottom: 10px;
+    gap: 5px; /* Minskat avstånd mellan pilar och månadsnamnet */
 }
 
 #current-month {
     font-size: 1.5rem;
     color: #343a40;
     text-align: center;
-    flex-grow: 1;
 }
 
 .navigation-link {
@@ -69,6 +69,7 @@ header {
     color: #00509e;
     font-weight: bold;
     cursor: pointer;
+    margin: 0 5px; /* Lägger avstånd runt pilarna */
 }
 
 .navigation-link:hover {
