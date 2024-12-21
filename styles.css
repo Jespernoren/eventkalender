@@ -102,21 +102,22 @@ header {
 }
 
 .event-info-button {
-    display: block;
-    margin-top: 5px;
-    padding: 5px 10px;
-    font-size: 0.9rem;
-    color: white;
-    background-color: #00509e;
+    display: inline; /* Gör att den ser ut som en textlänk */
+    margin-top: 0; /* Ingen extra marginal */
+    padding: 0; /* Tar bort knapplook */
+    font-size: 1rem;
+    color: #00509e;
+    background: none;
     border: none;
-    border-radius: 3px;
+    text-decoration: underline;
     cursor: pointer;
-    text-align: center;
+    text-align: left;
 }
 
 .event-info-button:hover {
-    background-color: #003366;
-    transition: background-color 0.3s;
+    color: #003366;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
 .navigation-button {
@@ -236,7 +237,6 @@ header {
 
     .event-info-button {
         font-size: 0.8rem;
-        padding: 5px 8px;
     }
 
     .navigation-button {
