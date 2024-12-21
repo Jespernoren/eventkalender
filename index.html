@@ -14,12 +14,6 @@
     <!-- Allt innehåll ligger inom en container -->
     <main class="container">
         <div class="left-column">
-            <!-- Knappar ovanför eventlistan -->
-            <div id="above-event-buttons">
-                <button id="back-to-today" class="navigation-button">Alla kommande events</button>
-                <button id="submit-event" class="navigation-button">Tipsa om event</button>
-            </div>
-
             <!-- Lista över kommande event -->
             <section id="event-list">
                 <h3 id="event-list-title">Kommande event</h3>
@@ -30,13 +24,19 @@
         <div class="right-column">
             <!-- Navigering för månad och titlar -->
             <div id="calendar-navigation">
-                <a id="prev-month" class="navigation-link">← Föregående</a>
+                <a id="prev-month" class="navigation-link">&laquo;</a>
                 <h2 id="current-month"></h2>
-                <a id="next-month" class="navigation-link">Nästa →</a>
+                <a id="next-month" class="navigation-link">&raquo;</a>
             </div>
 
             <!-- Kalendergrid -->
             <div id="calendar-grid"></div>
+
+            <!-- Knappar under kalendern -->
+            <div id="calendar-buttons">
+                <button id="back-to-today" class="navigation-button">Alla kommande events</button>
+                <button id="submit-event" class="navigation-button">Tipsa om event</button>
+            </div>
         </div>
     </main>
 
