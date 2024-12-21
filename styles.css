@@ -129,9 +129,13 @@ header {
 }
 
 /* Anpassning för små skärmar */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .container {
         flex-direction: column; /* En kolumn på mobil */
+    }
+
+    .right-column {
+        order: -1; /* Kalendern visas först på mobil */
     }
 
     #calendar-navigation {
