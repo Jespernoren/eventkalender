@@ -14,16 +14,15 @@
     <main class="event-container">
         <h2 class="event-title" id="event-title">Eventets titel</h2>
         <div class="event-details">
-            <span id="event-date">Datum: 2024-12-29</span>
-            <span id="event-location">Plats: Gesundaberget</span>
-            <span id="event-category">Kategori: Träning</span>
+            <span><strong>Datum:</strong> <p id="event-date">2024-12-29</p></span>
+            <span><strong>Plats:</strong> <p id="event-location">Gesundaberget</p></span>
+            <span><strong>Kategori:</strong> <p id="event-category">Träning</p></span>
         </div>
         <div class="event-description" id="event-description">
             Detaljerad beskrivning av eventet.
         </div>
         <div class="event-organizer">
-            <strong>Arrangör:</strong>
-            <span id="event-organizer">info@example.com</span>
+            <span><strong>Arrangör:</strong> <p id="event-organizer">info@example.com</p></span>
         </div>
         <div class="event-link" id="event-link-container">
             <a href="#" id="event-link" target="_blank">Läs mer eller registrera dig</a>
@@ -44,11 +43,11 @@
 
         // Uppdatera sidan med data
         document.getElementById('event-title').textContent = title;
-        document.getElementById('event-date').textContent = `Datum: ${date}`;
-        document.getElementById('event-location').textContent = `Plats: ${location}`;
+        document.getElementById('event-date').textContent = date;
+        document.getElementById('event-location').textContent = location;
         document.getElementById('event-description').textContent = description;
         document.getElementById('event-organizer').textContent = organizer;
-        document.getElementById('event-category').textContent = `Kategori: ${category}`;
+        document.getElementById('event-category').textContent = category;
 
         // Visa länk om den finns
         const linkContainer = document.getElementById('event-link-container');
