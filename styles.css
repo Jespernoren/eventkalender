@@ -15,20 +15,37 @@ header {
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 15px; /* Padding runt hela innehållet */
+    display: flex;
+    justify-content: space-between; /* Två kolumner */
+    gap: 20px; /* Mellanrum mellan kolumner */
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 15px;
     box-sizing: border-box;
+}
+
+.left-column {
+    flex: 2; /* Större kolumn för eventlistan */
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.right-column {
+    flex: 1; /* Mindre kolumn för kalendern */
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #calendar-navigation {
     display: flex;
     justify-content: space-between; /* Justerar länkar och titel på samma rad */
     align-items: center; /* Centrerar vertikalt */
-    gap: 10px; /* Mellanrum mellan länkar och titel */
-    margin: 10px 0;
-    padding: 10px 0;
-    flex-wrap: nowrap; /* Förhindrar radbrytning */
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
 #current-month {
@@ -56,7 +73,7 @@ header {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 8px;
-    margin: 10px 0;
+    margin-top: 10px;
 }
 
 .calendar-day {
@@ -80,7 +97,7 @@ header {
 
 .navigation-button {
     display: inline-block;
-    margin: 10px 5px;
+    margin: 10px 0;
     padding: 10px 20px;
     font-size: 1rem;
     color: white;
@@ -97,9 +114,7 @@ header {
 }
 
 #event-list {
-    max-width: 800px;
-    margin: 15px auto;
-    padding: 15px;
+    max-width: 100%;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -120,11 +135,21 @@ header {
 }
 
 /* Anpassning för små skärmar */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Staplar kolumner vertikalt */
+    }
+
+    .left-column,
+    .right-column {
+        flex: none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
     #calendar-navigation {
         gap: 5px; /* Mindre mellanrum på mobil */
-        justify-content: space-between; /* Behåller allt på samma rad */
-        flex-wrap: nowrap; /* Förhindrar radbrytning */
+        justify-content: space-between;
     }
 
     #calendar-grid {
