@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0; /* Padding flyttad till container */
+    padding: 0;
     background-color: #f8f9fa;
     color: #343a40;
     box-sizing: border-box;
@@ -16,17 +16,18 @@ header {
 
 .container {
     display: flex;
-    justify-content: space-between; /* Två kolumner */
-    align-items: flex-start; /* Justerar innehållet till toppen */
-    gap: 20px; /* Mellanrum mellan kolumner */
+    flex-wrap: nowrap; /* Hindrar radbrytning */
+    justify-content: space-between;
+    align-items: flex-start;
     max-width: 1200px;
     margin: 20px auto;
     padding: 15px;
+    gap: 20px;
     box-sizing: border-box;
 }
 
 .left-column {
-    flex: 2; /* Större kolumn för eventlistan */
+    flex: 2;
     background-color: white;
     padding: 15px;
     border-radius: 8px;
@@ -34,7 +35,7 @@ header {
 }
 
 .right-column {
-    flex: 1; /* Mindre kolumn för kalendern */
+    flex: 1;
     background-color: white;
     padding: 15px;
     border-radius: 8px;
@@ -43,31 +44,28 @@ header {
 
 #calendar-navigation {
     display: flex;
-    justify-content: space-between; /* Justerar länkar och titel på samma rad */
-    align-items: center; /* Centrerar vertikalt */
-    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 15px;
 }
 
 #current-month {
     font-size: 1.5rem;
     color: #343a40;
-    text-transform: capitalize;
     text-align: center;
-    flex-grow: 1; /* Fyller utrymme mellan länkar */
+    flex-grow: 1;
 }
 
 .navigation-link {
-    text-decoration: underline; /* Ser alltid ut som länkar */
-    color: #00509e; /* Blå färg */
+    text-decoration: underline;
+    color: #00509e;
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    white-space: nowrap; /* Förhindrar radbrytning av text */
 }
 
 .navigation-link:hover {
-    color: #003366; /* Mörkare blå vid hovring */
+    color: #003366;
 }
 
 #calendar-grid {
@@ -106,12 +104,10 @@ header {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    text-align: center;
 }
 
 .navigation-button:hover {
     background-color: #003366;
-    transition: background-color 0.3s;
 }
 
 .event-item {
@@ -125,17 +121,15 @@ header {
 
 .event-item:hover {
     background-color: #f0f0f0;
-    transition: background-color 0.3s;
 }
 
-/* Anpassning för små skärmar */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column; /* En kolumn på mobil */
+        flex-direction: column;
     }
 
     .right-column {
-        order: -1; /* Kalendern visas först på mobil */
+        order: -1;
     }
 
     #calendar-navigation {
