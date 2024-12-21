@@ -85,7 +85,7 @@ function updateEventList(month = null, year = null) {
         eventListTitle.textContent = 'Alla kommande events';
     } else {
         const monthName = new Date(year, month).toLocaleString('default', { month: 'long' });
-        eventListTitle.textContent = `Events i ${monthName} ${year}`;
+        eventListTitle.textContent = `Kommande events i ${monthName} ${year}`;
     }
 
     // Om inga event hittas
