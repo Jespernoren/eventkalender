@@ -163,3 +163,81 @@ header {
         padding: 8px 16px;
     }
 }
+
+/* Eventsida-stilar */
+.event-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.event-title {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.event-details {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.event-details span {
+    display: block;
+    color: #00509e;
+    font-weight: bold;
+}
+
+.event-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #00509e;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #003366;
+}
+
+/* Anpassning för små skärmar */
+@media (max-width: 768px) {
+    .event-title {
+        font-size: 1.5rem;
+    }
+
+    .event-details {
+        font-size: 1rem;
+    }
+
+    .event-description {
+        font-size: 0.9rem;
+    }
+
+    .back-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
