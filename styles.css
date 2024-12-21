@@ -103,21 +103,19 @@ header {
 
 .event-info-button {
     display: inline; /* Gör att den ser ut som en textlänk */
-    margin-top: 0; /* Ingen extra marginal */
+    margin: 0; /* Ingen extra marginal */
     padding: 0; /* Tar bort knapplook */
     font-size: 1rem;
-    color: #00509e;
-    background: none;
-    border: none;
-    text-decoration: underline;
-    cursor: pointer;
-    text-align: left;
+    color: #00509e; /* Länkfärg */
+    background: none; /* Ingen bakgrundsfärg */
+    border: none; /* Ingen kant */
+    text-decoration: underline; /* Understrykning för att indikera länk */
+    cursor: pointer; /* Handpekare vid hovring */
 }
 
 .event-info-button:hover {
-    color: #003366;
-    text-decoration: none;
-    transition: color 0.3s;
+    color: #003366; /* Mörkare blå vid hovring */
+    text-decoration: none; /* Tar bort understrykning vid hovring */
 }
 
 .navigation-button {
