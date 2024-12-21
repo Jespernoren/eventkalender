@@ -81,6 +81,7 @@ header {
     grid-template-columns: repeat(7, 1fr);
     gap: 8px;
     margin-top: 10px;
+    width: 100%; /* Säkerställer full bredd */
 }
 
 #all-events-button {
@@ -238,6 +239,7 @@ header {
 
     .right-column {
         order: -1;
+        width: 100%; /* Säkerställer full bredd i mobilvy */
     }
 
     #calendar-navigation {
