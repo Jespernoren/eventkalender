@@ -16,6 +16,7 @@ header {
 
 .container {
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: flex-start;
     max-width: 1200px;
@@ -25,29 +26,29 @@ header {
     box-sizing: border-box;
 }
 
-.left-column, .right-column {
+.left-column {
+    flex: 2;
     background-color: white;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.left-column {
-    flex: 2;
-}
-
 .right-column {
     flex: 1;
-    max-width: 100%;
-    overflow-x: hidden; /* Förhindrar horisontell rullning */
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Säkerställer att kolumnen inte överskrider bredd */
 }
 
 #calendar-navigation {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
     margin-bottom: 10px;
+    gap: 10px;
 }
 
 #current-month {
@@ -74,27 +75,9 @@ header {
     grid-template-columns: repeat(7, 1fr);
     gap: 8px;
     margin: 10px auto;
-    max-width: 100%; /* Säkerställer att kalendern inte går utanför */
-    width: 100%; /* Kalendern anpassar sig till sin container */
-    box-sizing: border-box; /* Tar hänsyn till padding */
-    padding: 0 10px; /* Anpassad padding */
-}
-
-#all-events-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: white;
-    background-color: #00509e;
-    border: none;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-}
-
-#all-events-button:hover {
-    background-color: #003366;
+    max-width: calc(100% - 30px); /* Säkerställer att paddingen respekteras */
+    padding: 0 15px; /* Matchar sidans padding */
+    box-sizing: border-box; /* Säkerställer korrekt beräkning */
 }
 
 .calendar-day {
@@ -115,30 +98,22 @@ header {
     transition: background-color 0.3s;
 }
 
-.event-info-button {
+#all-events-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
     font-size: 1rem;
-    color: #00509e;
-    text-decoration: underline;
-    background: none;
+    color: white;
+    background-color: #00509e;
     border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
     cursor: pointer;
 }
 
-.event-info-button:hover {
-    color: #003366;
-}
-
-.event-item {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-.event-item:last-child {
-    border-bottom: none;
-}
-
-.event-item:hover {
-    background-color: #f0f0f0;
+#all-events-button:hover {
+    background-color: #003366;
 }
 
 .event-container {
@@ -192,6 +167,7 @@ header {
     border: none;
     border-radius: 5px;
     text-align: center;
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -203,7 +179,7 @@ header {
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
-        padding: 10px; /* För att matcha paddingen */
+        padding: 10px;
     }
 
     .right-column {
@@ -214,12 +190,9 @@ header {
     #calendar-grid {
         grid-template-columns: repeat(7, 1fr);
         gap: 5px;
-        padding: 0 10px; /* Anpassad padding */
-    }
-
-    #all-events-button {
-        font-size: 0.9rem;
-        padding: 8px 16px;
+        padding: 0 10px; /* Säkerställer paddingen */
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     .calendar-day {
@@ -240,6 +213,11 @@ header {
     }
 
     .back-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    #all-events-button {
         font-size: 0.9rem;
         padding: 8px 16px;
     }
