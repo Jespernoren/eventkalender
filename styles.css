@@ -40,6 +40,7 @@ header {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Säkerställer bredd i mobil */
 }
 
 #above-event-buttons {
@@ -54,7 +55,7 @@ header {
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
-    gap: 5px; /* Minskat avstånd mellan pilar och månadsnamnet */
+    gap: 5px;
 }
 
 #current-month {
@@ -65,11 +66,11 @@ header {
 
 .navigation-link {
     text-decoration: none;
-    font-size: 1.5rem; /* Förstorade pilarna */
+    font-size: 1.5rem;
     color: #00509e;
     font-weight: bold;
     cursor: pointer;
-    margin: 0 5px; /* Lägger avstånd runt pilarna */
+    margin: 0 5px;
 }
 
 .navigation-link:hover {
@@ -81,12 +82,14 @@ header {
     grid-template-columns: repeat(7, 1fr);
     gap: 8px;
     margin-top: 10px;
-    width: 100%; /* Säkerställer full bredd */
+    max-width: 100%; /* Säkerställer att kalendern inte går utanför */
+    padding: 0 15px; /* Matchar paddingen på sidan */
+    margin: 0 auto; /* Centrerar kalendern */
 }
 
 #all-events-button {
     display: block;
-    margin: 20px auto; /* Centrerar knappen under kalendern */
+    margin: 20px auto;
     padding: 10px 20px;
     font-size: 1rem;
     color: white;
@@ -239,7 +242,7 @@ header {
 
     .right-column {
         order: -1;
-        width: 100%; /* Säkerställer full bredd i mobilvy */
+        width: 100%;
     }
 
     #calendar-navigation {
@@ -254,6 +257,8 @@ header {
     #calendar-grid {
         grid-template-columns: repeat(7, 1fr);
         gap: 5px;
+        max-width: 100%;
+        padding: 0 15px;
     }
 
     .calendar-day {
