@@ -16,7 +16,7 @@ header {
 
 .container {
     display: flex;
-    flex-wrap: nowrap; /* Hindrar radbrytning */
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: flex-start;
     max-width: 1200px;
@@ -44,7 +44,7 @@ header {
 
 #above-event-buttons {
     display: flex;
-    justify-content: flex-start; /* Justerar knapparna till vänster */
+    justify-content: flex-start;
     gap: 10px;
     margin-bottom: 15px;
 }
@@ -93,7 +93,7 @@ header {
 .calendar-day.event {
     background-color: #003366;
     color: white;
-    cursor: default; /* Hindrar klick */
+    cursor: default;
 }
 
 .calendar-day.event:hover {
@@ -102,11 +102,11 @@ header {
 }
 
 .event-info-button {
-    display: inline !important; /* Gör att den beter sig som en textlänk */
+    display: inline !important;
     margin: 0 !important;
     padding: 0 !important;
     font-size: 1rem !important;
-    color: #00509e !important; /* Länkfärg */
+    color: #00509e !important;
     background: none !important;
     border: none !important;
     text-decoration: underline !important;
@@ -173,17 +173,16 @@ header {
 }
 
 .event-details span {
-    display: inline-block; /* Lägger rubriken och texten på samma rad */
-    margin-right: 5px;
-    color: #00509e; /* Blå rubriker */
+    display: inline-block;
+    color: #00509e;
     font-weight: bold;
 }
 
 .event-details p {
-    display: inline-block; /* Lägger texten bredvid rubriken */
-    color: #343a40; /* Svart text */
+    display: inline-block;
+    color: #343a40;
     font-weight: normal;
-    margin: 0;
+    margin-left: 5px;
 }
 
 .event-description {
