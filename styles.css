@@ -42,6 +42,13 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+#above-event-buttons {
+    display: flex;
+    justify-content: flex-start; /* Justerar knapparna till vänster */
+    gap: 10px; /* Mellanrum mellan knapparna */
+    margin-bottom: 15px; /* Avstånd under knapparna */
+}
+
 #calendar-navigation {
     display: flex;
     justify-content: space-between;
@@ -96,7 +103,6 @@ header {
 
 .navigation-button {
     display: inline-block;
-    margin: 10px 5px;
     padding: 10px 20px;
     font-size: 1rem;
     color: white;
@@ -104,6 +110,7 @@ header {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    text-align: center;
 }
 
 .navigation-button:hover {
