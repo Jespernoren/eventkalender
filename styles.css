@@ -28,6 +28,7 @@ header {
     gap: 10px; /* Mellanrum mellan länkar och titel */
     margin: 10px 0;
     padding: 10px 0;
+    flex-wrap: nowrap; /* Förhindrar radbrytning */
 }
 
 #current-month {
@@ -121,9 +122,9 @@ header {
 /* Anpassning för små skärmar */
 @media (max-width: 600px) {
     #calendar-navigation {
+        gap: 5px; /* Mindre mellanrum på mobil */
         justify-content: space-between; /* Behåller allt på samma rad */
         flex-wrap: nowrap; /* Förhindrar radbrytning */
-        gap: 5px;
     }
 
     #calendar-grid {
