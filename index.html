@@ -11,29 +11,33 @@
         <h1>Eventkalender</h1>
     </header>
 
-    <!-- Allt innehåll ligger inom en container -->
-    <main class="content-container">
+    <!-- Allt innehåll i två kolumner -->
+    <main class="container">
 
-        <!-- Vänsterkolumn: Eventlistan -->
-        <section id="event-list" class="left-column">
-            <h3 id="event-list-title">Alla kommande events</h3>
+        <!-- Vänsterkolumn (eventlistan) -->
+        <section class="left-column">
+            <h3 id="event-list-title">Kommande event</h3>
             <div id="events-container"></div>
         </section>
 
-        <!-- Högerkolumn: Kalender -->
-        <aside id="calendar" class="right-column">
+        <!-- Högerkolumn (kalendern) -->
+        <aside class="right-column">
+            <!-- Navigering för månad -->
             <div id="calendar-navigation">
                 <a id="prev-month" class="navigation-link">← Föregående</a>
                 <h2 id="current-month"></h2>
                 <a id="next-month" class="navigation-link">Nästa →</a>
             </div>
+
+            <!-- Kalendergrid -->
             <div id="calendar-grid"></div>
+
+            <!-- Navigationsknappar under kalendern -->
             <div id="below-calendar-navigation">
                 <button id="back-to-today" class="navigation-button">Alla kommande events</button>
                 <button id="submit-event" class="navigation-button">Tipsa om event</button>
             </div>
         </aside>
-
     </main>
 
     <script src="app.js"></script>
